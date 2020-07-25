@@ -1,0 +1,15 @@
+div {
+    background-color: #35475B;
+    margin: auto;
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+a {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: Quicksand, sans-serif;
+    font-size: 14px;
+}
