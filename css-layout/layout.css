@@ -1,0 +1,41 @@
+.text {
+    font-size: 30px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.red {
+    height: 400px;
+    flex-grow: 3;
+    background-color: red;
+}
+.blueGreen {
+    flex-grow: 2;
+}
+.blue {
+    height: 200px;
+    background-color: blue;
+}
+.green {
+    height: 200px;
+    background-color: green;
+}
+.div1 {
+    display: flex;
+    padding: 40px 0px 40px 0px;
+}
+.div2 {
+    margin-left: 15px;
+}
+.div3 {
+    flex-grow: 3;
+}
+.blue2 {
+    height: 400px;
+    background-color: blue;
+}
+.green2 {
+    height: 400px;
+    background-color: green;
+}
