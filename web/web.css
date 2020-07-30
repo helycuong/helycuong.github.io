@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    font-size: 18px;
+    background-color: gainsboro;
+    padding: 40px 30px 40px 30px;
+}
+a {
+    text-decoration: none;
+    line-height: 5px;
+    color: black;
+}
+.red {
+    color: red;
+}
+.div {
+    padding: 15px 15px 30px 15px;
+}
