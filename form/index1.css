@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+}
+#container {
+    background: white;
+    margin: auto;
+    margin-top: 120px;
+    width: 450px;
+    height: 500px;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.3);
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+.back {
+    text-decoration: none;
+    font-size: 40px;
+    margin: -10px 5px 0 0;
+}
+.head {
+    margin: -15px 0 -15px 15px;
+    font-size: 18px;
+}
+.head p {
+    margin-top: -15px;
+}
+.form {
+   text-align: center;
+   margin-top: 15px;
+}
+.name {
+    background-color: #f0f2f5;
+    height: 35px;
+    width: 45%;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 0 3px 0 3px;
+}
+.email {
+    background-color: #f0f2f5;
+    width: 92%;
+    height: 35px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.date1 {
+    width: 30%;
+    height: 35px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 0 1px 0 1px;
+}
+.date {
+    text-align: left;
+    margin: 15px 0 -15px 20px;
+}
+.radio {
+    margin: 15px 0 -15px 0;
+}
+.text {
+    text-align: left;
+    margin: 15px 12px 0 15px;
+    font-size: 15px;
+}
+.button {
+    background-color: limegreen;
+    width: 40%;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.button a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
