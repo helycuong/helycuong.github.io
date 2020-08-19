@@ -1,0 +1,61 @@
+.head {
+    text-align: center;
+    color: white;
+    font-family: Mulish, sans-serif;
+    line-height: 18px;
+    padding-top: 20px;
+}
+.tks {
+    font-size: 19px;
+    font-family: Mulish, sans-serif;
+}
+.background {
+    opacity: 0.5;
+}
+body {
+    background-image: url(https://vieclam24h.vn/cam-nang-nghe-nghiep/wp-content/uploads/2019/07/lam-viec-nhom-mang-den-nhung-loi-ich-va-y-nghia-noi-troi-nao.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+.content {
+    background-color: #2C2D4D;
+    width: 670px;
+    margin: auto;
+    border-radius: 3px;
+    padding: 45px 20px 60px 35px;
+    font-family: Mulish, sans-serif;
+    font-size: 20px;
+    color: white;
+    line-height: 30px;
+    opacity: 0.95;
+}
+.question {
+    line-height: 5px;
+}
+.box {
+    width: 650px;
+    height: 35px;
+    border-radius: 3px;
+    font-size: 17px;
+    border-style: none;
+}
+.comment {
+    width: 650px;
+    height: 120px;
+    font-size: 17px;
+    font-family: Mulish, sans-serif;
+}
+.submit {
+    width: 650px;
+    height: 45px;
+    border-radius: 3px;
+    border-style: none;
+    background-color: #37AF65;
+    color: white;
+    font-size: 17px;
+}
+.checkbox {
+    width: 20px;
+    height: 20px;
+}

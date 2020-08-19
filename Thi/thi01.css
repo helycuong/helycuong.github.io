@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-image: url("https://img2.thuthuatphanmem.vn/uploads/2018/12/30/mau-background-cuc-dep_110638631.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 200%;
+    font-family: 'Baloo Chettan 2';
+}
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: red;
+    margin-top: 40px;
+}
+#content {
+    margin: auto;
+    width: 800px;
+    display: flex;
+    justify-content: center;
+}
+img {
+    width: 350px;
+    border-radius: 10px;
+}
+.figcaption {
+    text-align: center;
+    margin-top: 10px;
+}
+.section {
+    font-size: 20px;
+}
