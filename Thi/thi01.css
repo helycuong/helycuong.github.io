@@ -1,11 +1,54 @@
 * {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 body {
     background-image: url("https://img2.thuthuatphanmem.vn/uploads/2018/12/30/mau-background-cuc-dep_110638631.jpg");
     background-repeat: no-repeat;
-    background-size: 100% 200%;
+    background-size: 100% 150%;
     font-family: 'Baloo Chettan 2';
+}
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: dodgerblue;
+    height: 50px;
+}
+.menu ul {
+    display: flex;
+}
+.menu ul li {
+    position: relative;
+    display: inline;
+}
+.menu ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 40px 10px 0;
+    font-size: 20px;
+}
+.menu ul li > .sub-menu {
+    position: absolute;
+    display: none;
+    width: 150px;
+    padding-top: 14px;
+}
+.menu ul li a:hover {
+    color: gray;
+}
+.menu ul li:hover .sub-menu {
+    display: block;
+}
+.sub-menu li a {
+    background-color: whitesmoke;
+    display: block;
+    padding-top: 10px;
+    text-align: center;
+}
+.sub-menu li a:hover {
+    background-color: gainsboro;
 }
 h2 {
     text-align: center;
@@ -13,6 +56,7 @@ h2 {
     font-size: 30px;
     color: red;
     margin-top: 40px;
+    margin-bottom: 40px;
 }
 #content {
     margin: auto;
@@ -29,5 +73,7 @@ img {
     margin-top: 10px;
 }
 .section {
-    font-size: 20px;
+    font-size: 22px;
+    margin-left: 40px;
+    line-height: 40px;
 }
