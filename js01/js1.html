@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài tập javascript 1</title>
+</head>
+
+<body>
+  <script>
+    //Bài 1: Hàm kiểm tra 1 chuỗi có nằm trong chuỗi khác hay không.
+    var a = 'i love you';
+    function checkStringExist(string) {
+      return string.includes(str);
+    }
+    str = 'you';
+    console.log(checkStringExist(a));
+
+    //Bài 2: Hàm cắt 8 ký tự đầu của chuỗi và thêm '...' ở cuối.
+    var str = 'xin chao cac ban';
+    function shortenString(string) {
+      return string.substr(0, 8) + '...';
+    }
+    console.log(shortenString(str));
+
+    //Bài 3: Hàm viết hoa chữ cái đầu của chuỗi.
+    var str = 'xin chao cac ban';
+    function firstLetterCapitalize(value) {
+      let firstLetter = value.charAt(0).toUpperCase();
+      let cutWord = value.substr(1);
+      return firstLetter + cutWord;
+    };
+    function capitalizeString(string) {
+      return string.split(' ').map(firstLetterCapitalize).join(' ');
+
+    };
+    console.log(capitalizeString(str));
+
+    //Bài 4: Hàm sao chép chuỗi lên 10 lần.
+    let a = 'love';
+    function repeatString(string) {
+      return string.repeat(10);
+    }
+    console.log(repeatString(a));
+
+    //Bài 5: Hàm sao chép chuỗi lên 10 lần, ngăn cách nhau bởi dấu -.
+    let b = 'love';
+    function repeatString(string) {
+      let newString = (string + '-').repeat(10);
+      return newString.substr(0, newString.length - 1);
+    }
+    console.log(repeatString(b))
+
+    //Bài 6: Hàm sao chép chuỗi lên n lần.
+    function repeatString(string, number) {
+      if (number > 1) {
+        let newString = (string + '-').repeat(number);
+        return newString.substr(0, newString.length - 1);
+      } else {
+        return false;
+      }
+    };
+    console.log(repeatString('a', 5));
+
+    //Bài 7: Hàm đảo ngược chuỗi.
+    let str = 'hello';
+    function reverseString(string) {
+      return string.split('').reverse().join('');
+    }
+    console.log(reverseString(str));
+
+    //Bài 8: Hàm kiểm tra chuỗi đối xứng.
+    let str = 'Race car';
+    function symmetry(string) {
+      let a = true;
+      let newString = string.toUpperCase();
+      let array = newString.split('');
+      function check(value) {
+        return value != ' ';
+      };
+      let newArray = array.filter(check);
+      for (let i = 0; i < newArray.length / 2; i++) {
+        if (newArray[i] == newArray[newArray.length - (i + 1)]) {
+          a = true;
+        }
+        else {
+          a = false;
+          break;
+        }
+      } return a;
+    };
+    console.log(symmetry(str))
+
+    //Bài 9: Hàm tìm sô nhỏ nhất trong mảng.
+    var arr = [4, 1, 2, 3];
+    function minNumber(array) {
+      let min = array[0];
+      for (let x of array) {
+        if (x < min) {
+          min = x;
+        } else {
+          min = min;
+        }
+      }
+      return min;
+    }
+    console.log(minNumber(arr));
+
+    //Bài 10: Tìm số lớn thứ nhì trong mảng.
+    var arr = [5, 5, 1, 7, 4, 3];
+    function maxNumber(array) {
+      let max = array[0];
+      for (let x of array) {
+        if (x > max) {
+          max = x;
+        } else {
+          max = max;
+        }
+      }
+      return max;
+    };
+    function max2Number(array) {
+      let i = 0;
+      let max2 = array[i];
+      for (let y of array) {
+        if (max2 != maxNumber(array)) {
+          if (y > max2 && y < maxNumber(array)) {
+            max2 = y;
+          } else {
+            max2 = max2;
+          }
+        } else {
+          max2 = array[i++];
+        }
+      }
+      return max2;
+    };
+    console.log(max2Number(arr));
+
+    //Bài 11: Hàm sắp xếp mảng theo chiều ngược của bảng chữ cái.
+    var students = ['nam', 'hoa', 'tuan']
+    function sortName(a, b) {
+      if (a > b) {
+        return -1;
+      }
+      if (a < b) {
+        return 1;
+      }
+      return 0;
+    }
+    function sortStudents(arr) {
+      return arr.sort(sortName);
+    }
+    console.log(sortStudents(students));
+
+    //Bài 12: Hàm tính tổng các số chia hết cho 5 từ 0 --> 100.
+    function multiples(num) {
+      let sum = 0;
+      for (let i = 0; i <= 100; i++) {
+        if (i % num == 0) {
+          sum += i;
+        } else {
+          sum = sum;
+        }
+      } return sum;
+    }
+    console.log(multiples(5));
+
+    //Bài 13:  Viết hàm cho phép truyền vào 1 mảng các số, kết quả trả về là 1 mảng mới với các số là số dư tương ứng khi chia mảng cũ cho 2.
+    var array = [-3, -2, -1, 0, 1, 2, 3]
+    function remainder(arr) {
+      let newArray = [];
+      for (let num of arr) {
+        newArray.push(num % 2);
+      }
+      return newArray;
+    }
+    console.log(remainder(array));
+
+    //Bài 14: Hàm lọc ra những phần tử có độ dài lớn nhất.
+    var array = ['aa', 'aba', 'ad', 'c', 'vcd']
+    function arrayLength(arr) {
+      let maxLength = 0;
+      for (let value of arr) {
+        if (value.length >= maxLength) {
+          maxLength = value.length;
+        } else {
+          maxLength = maxLength;
+        }
+      }
+      return maxLength;
+    };
+    function maxArray(arr) {
+      let newArray = [];
+      for (let value of arr) {
+        if (value.length == arrayLength(arr)) {
+          newArray.push(value);
+        } else {
+          newArray = newArray;
+        }
+      }
+      return newArray;
+    }
+    console.log(maxArray(array));
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

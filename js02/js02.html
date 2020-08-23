@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập javascript 2</title>
+</head>
+
+<body>
+    <script>
+        // Bài 1: Hàm tính thể tích hình cầu.
+        function run(r) {
+            return v = (4 / 3) * Math.PI * r ** 3;
+        }
+        console.log(run(5))
+
+        // Bài 2: Tổng các số nguyên giữa num1 và num2.
+        function run(num1, num2) {
+            var min = Math.min(num1, num2);
+            var max = Math.max(num1, num2);
+            var sum = 0;
+            if (Number.isInteger(num1) && Number.isInteger(num2)) {
+                for (i = min + 1; i < max; i++) {
+                    sum += i;
+                }
+            }
+            return sum;
+        }
+        console.log(run(8, 3));
+
+        //Bài 3: Kiểm tra số nguyên tố.
+        function number(num) {
+            if (num > 1) {
+                let check = true;
+                for (i = 2; i < num; i++) {
+                    if (num % i == 0) {
+                        return check = false;
+                    }
+                }
+                return check;
+            } else {
+                return check = false;
+            }
+        }
+        console.log(number(2))
+
+        //Bài 4: Tính tổng các số nguyên tố trong 1 khoảng.
+        function primeNumber(num) {
+            if (num > 1) {
+                let check = true;
+                for (let i = 2; i < num; i++) {
+                    if (num % i == 0) {
+                        return check = false;
+                    }
+                }
+                return check;
+            } else {
+                return check = false;
+            }
+        }
+        function sumPrimeNumber(x) {
+            if (x > 1) {
+                var sum = 0;
+                for (let i = 2; i <= x; i++) {
+                    if (primeNumber(i) == true) {
+                        sum = sum + i;
+                    } else {
+                        sum = sum;
+                    }
+                }
+                return sum;
+            } else {
+                return false;
+            }
+        }
+        console.log(sumPrimeNumber(11))
+
+        //Bài 5: Hàm tính tổng các ước của 1 số.
+        function divisor(num) {
+            if (num > 0 && Number.isInteger(num)) {
+                let sum = 0;
+                for (let i = 1; i <= num; i++) {
+                    if (num % i == 0) {
+                        sum = sum + i;
+                    } else {
+                        sum = sum;
+                    }
+                }
+                return sum;
+            }
+        }
+        console.log(divisor(10))
+
+
+        //Bài 9: Hàm kiểm tra độ dài của object
+        var user = {
+            name: "Trương Minh Thúy",
+            age: 25,
+            email: 'support@techmaster.vn'
+        };
+
+        function objectLength(obj) {
+            return Object.keys(obj).length;
+        }
+        console.log(objectLength(user))
+
+
+        //Bài 8: Hàm kiểm tra keys có tồn tại trong Object hay không.
+        var user = {
+            name: "Trương Minh Thúy",
+            age: 25,
+            email: 'support@techmaster.vn'
+        };
+        function checkObject(obj) {
+            return Object.keys(obj).includes(value);
+        }
+        value = 'agse';
+        console.log(checkObject(user));
+
+        //Bài 7: Hàm để lấy danh sách các value của Object.
+        var user = {
+            name: "Trương Minh Thúy",
+            age: 25,
+            email: 'support@techmaster.vn'
+        };
+        function valueObject(object) {
+            return Object.values(object).join(', ');
+        }
+        console.log(valueObject(user))
+
+        //Bài 6: Hàm để lấy danh sách các key của object.
+        var user = {
+            name: "Trương Minh Thúy",
+            age: 25,
+            email: 'support@techmaster.vn'
+        };
+        function keyObject(object) {
+            return Object.keys(object).join(', ');
+        }
+        console.log(keyObject(user))
+
+        //Bài 10: Hàm lấy ra những user có age > 25 và isStatus = true;
+        user = [{
+            name: 'cuong',
+            age: 27,
+            isStatus: false
+        },
+        {
+            name: 'thu',
+            age: 26,
+            isStatus: true
+        },
+        {
+            name: 'hoan',
+            age: 20,
+            isStatus: true
+        }]
+
+        function check(obj) {
+            if (obj.age > 25 && obj.isStatus == true) {
+                return obj.name;
+            } else {
+                return false;
+            }
+        }
+        function run(arr) {
+            let a = arr.map(check);
+            return a;
+        }
+        console.log(run(user));
+
+        //Bài 11: Hàm sắp xếp theo age tăng dần.
+        function check(a, b) {
+            return a.age - b.age;
+        }
+        function run(arr) {
+            return arr.sort(check);
+        }
+        console.log(run(user))
+
+
+    </script>
+</body>
+
+</html>
