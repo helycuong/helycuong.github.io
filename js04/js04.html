@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Bài 1: Hàm lấy ngày hiện tại.
+        function getCurrentDay() {
+            let d = new Date();
+            return d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear();
+        }
+        console.log(getCurrentDay());
+
+        //Bài 2: Hàm tính số ngày trong tháng.
+        function getDaysInMonth(year, month) {
+            let monthStart = new Date(year, month, 1);
+            let monthEnd = new Date(year, month + 1, 1);
+            return (monthEnd - monthStart) / 86400000;
+        }
+        console.log(getDaysInMonth(2020, 7))
+
+        //Bài 3: Hàm kiểm tra 1 ngày có phải ngày cuối tuần không.
+        function weekend(year, month, date) {
+            let d = new Date(year, month - 1, date);
+            if (d.toString().includes('Sun') == true) {
+                return 'This is weekend'
+            } else {
+                return 'This is not weekend'
+            }
+        }
+        console.log(weekend(2020, 8, 23))
+
+        //Bài 4: Hàm chuyển đổi phút sang giờ.
+        function time(minute) {
+            if (minute <= 60) {
+                return '0h ' + minute + 'p';
+            } else {
+                let hours = Math.floor(minute / 60);
+                let minutes = minute - (hours * 60);
+                return hours + 'h ' + minutes + 'p';
+            }
+        }
+        console.log(time(1000))
+
+        //Bài 5: Hàm đếm số ngày trôi qua từ đầu năm.
+        function getDaysInMonth(year) {
+            let monthStart = new Date(year, 0, 1);
+            let monthEnd = new Date();
+            return Math.trunc((monthEnd - monthStart)/86400000);
+        }
+        console.log(getDaysInMonth(2020))
+
+        //Bài 6: Hàm tính tuổi.
+        function calculate_age(year, month, date) {
+           let dateOfBirth = new Date(year, month, date);
+           let d = new Date();
+           return Math.trunc((d - dateOfBirth)/(86400000*365));
+       }
+       console.log(calculate_age(1982, 11, 4))
+
+
+
+
+    </script>
+</body>
+
+</html>

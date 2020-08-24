@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Bài 1: Hàm lấy 1 phần tử ngẫu nhiên của mảng.
+        var array = [1, 7, 9, 4, 5]
+        function randomArray(arr) {
+            let index = Math.trunc(Math.random()*arr.length);
+            return arr[index];
+        }
+        console.log(randomArray(array));
+
+        //Bài 2: Hàm sắp xếp ngẫu nhiên các phần tử trong mảng.
+        var array = [1, 7, 9, 4, 5]
+        function randomIndex(arr) {
+            return arr.sort(function(a, b) {
+                return 0.5 - Math.random();
+            });
+        };
+        console.log(randomIndex(array));
+
+        //Bài 3: Hàm lấy các phần tử trùng nhau trong 2 mảng.
+        var array1 = [1, 2, 3, 'b']
+        var array2 = [3, 4, 2, 'a', 'b', 9]
+        function similarityArray(arr1, arr2) {
+            let similarity = [];
+            for(let i = 0; i < arr2.length; i++) {
+                if(arr1.includes(arr2[i]) == true) {
+                    similarity.push(arr2[i]);
+                }
+            } return similarity;
+        };
+        console.log(similarityArray(array1, array2));
+
+        //Bài 4: Hàm lấy các phần tử không trùng nhau trong 2 mảng.
+        var array1 = [1, 2, 3, 'b']
+        var array2 = [3, 4, 2, 'a', 'b', 9] 
+        function similarityArray(arr1, arr2) {
+            let similarity = [];
+            for(let i = 0; i < arr2.length; i++) {
+                if(arr1.includes(arr2[i]) == true) {
+                    similarity.push(arr2[i]);
+                }
+            } return similarity;
+        };
+        function otherArray(arr1, arr2) {
+            let other = [];
+            let arr3 = arr1.concat(arr2); 
+            for(let i = 0; i < arr3.length; i++) {
+                if(similarityArray(arr1, arr2).includes(arr3[i]) == false) {
+                    other.push(arr3[i]);
+                }
+            } return other;
+        };
+       console.log(otherArray(array1, array2));
+
+       //Bài 5: function lấy tất cả các phần tử không trùng nhau trong cả 2 mảng.
+       var array1 = [1, 2, 3, 'b']
+        var array2 = [3, 4, 2, 'a', 'b', 9] 
+        function similarityArray(arr1, arr2) {
+            let similarity = [];
+            for(let i = 0; i < arr2.length; i++) {
+                if(arr1.includes(arr2[i]) == true) {
+                    similarity.push(arr2[i]);
+                }
+            } return similarity;
+        };
+        function otherArray(arr1, arr2) {
+            let other = [];
+            let arr3 = arr1.concat(arr2); 
+            for(let i = 0; i < arr3.length; i++) {
+                if(similarityArray(arr1, arr2).includes(arr3[i]) == false) {
+                    other.push(arr3[i]);
+                }
+            } return other;
+        };
+        function unionArray(arr1, arr2) {
+            return similarityArray(arr1, arr2).concat(otherArray(arr1, arr2));
+        }
+        console.log(unionArray(array1, array2));
+        
+        //Bài 6: Hàm tạo mã HEX ngẫu nhiên.
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (color.length = 1; color.length < 7; color.length++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        console.log(getRandomColor());
+
+        
+
+
+    </script>
+</body>
+</html>
