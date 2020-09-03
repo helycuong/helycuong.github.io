@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        #canvas {
+            position: absolute;
+            border: 3px solid black;
+            border-radius: 2px;
+            margin-top: 40px;
+            margin-left: 40px;
+        }
+        .canvas {
+            position: relative;
+            margin: auto;
+            width: 730px;
+            height: 730px;
+            background-color: #E6CCAD;
+            border: 4px solid black;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="canvas">
+        <canvas id="canvas" width="640" height="640"></canvas>
+    </div>
+    <script>
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d")
+
+        for (let l = 0, y = 0; l < 8; l++) {
+            if (l % 2 == 0) {
+                for (let i = 0, x = 0; i < 8; i++) {
+                    if (i % 2 == 0) {
+                        ctx.fillStyle = '#E6CCAD'
+                    } else {
+                        ctx.fillStyle = '#9C5621'
+                    }
+                    ctx.fillRect(x, y, 80, 80)
+                    ctx.fill()
+                    x += 80
+                }
+            } else {
+                for (let i = 0, x = 0; i < 8; i++) {
+                    if (i % 2 == 0) {
+                        ctx.fillStyle = '#9C5621'
+                    } else {
+                        ctx.fillStyle = '#E6CCAD'
+                    }
+                    ctx.fillRect(x, y, 80, 80)
+                    ctx.fill()
+                    x += 80
+                }
+            }
+            y += 80
+        }
+
+    </script>
+</body>
+
+</html>

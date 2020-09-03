@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bóng di chuyển qua 4 góc</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="600" height="400" style="border: 2px solid black"></canvas>
+    <script>
+        const canvas = document.getElementById('canvas')
+        const ctx = canvas.getContext('2d')
+
+        class Ball {
+            constructor(x, y, radius, color) {
+                this.x = x
+                this.y = y
+                this.radius = radius
+                this.color = color
+                this.dx = 0
+                this.dy = 0
+            }
+            draw() {
+                ctx.beginPath()
+                ctx.fillStyle = this.color
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
+                ctx.fill()
+            }
+            move() {
+                if(this.x > canvas.width - this.radius) {
+                    this.color = 'blue'
+                    this.dx = 0
+                    this.dy = 4
+                }
+                if(this.y > canvas.height - this.radius) {
+                    this.color = 'black'
+                    this.dy = 0
+                    this.dx = -4
+                }
+                if(this.x < this.radius) {
+                    this.color = 'orange'
+                    this.dx = 0
+                    this.dy = -4
+                }
+                if(this.y < this.radius) {
+                    this.color = 'red'
+                    this.dy = 0
+                    this.dx = 4
+                }
+                this.x = this.x + this.dx
+                this.y = this.y + this.dy
+                this.draw()
+            }
+        }
+        let ball = new Ball(30, 30, 30, 'red')
+        ball.draw()
+
+        document.addEventListener('keydown', function (event) {
+            if (event.keyCode == 32) {
+                ball.dx = 4
+            }
+        })
+        document.addEventListener('keydown', function(event) {
+            if(event.keyCode == 13) {
+                ball.dy = 0
+                ball.dx = 0
+            }
+        })
+
+        function animate() {
+            requestAnimationFrame(animate)
+            ctx.clearRect(0, 0, canvas.width, canvas.height)
+            ball.move()
+        }
+        animate()
+
+    </script>
+</body>
+
+</html>

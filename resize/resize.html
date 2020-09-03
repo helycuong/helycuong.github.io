@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resize</title>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        const canvas = document.getElementById('canvas')
+        const ctx = canvas.getContext('2d')
+
+        canvas.style = 'border: 2px solid blue'
+
+        let draw = () => {
+            canvas.width = innerWidth*0.9
+            canvas.height = innerHeight*0.9
+
+            ctx.rect(0,0,canvas.width,canvas.height)
+            ctx.strokeStyle = 'red'
+            ctx.lineWidth = '3'
+            ctx.stroke()
+
+            ctx.beginPath()
+            ctx.moveTo(0,0)
+            ctx.lineTo(canvas.width,canvas.height)
+            ctx.moveTo(0,canvas.height)
+            ctx.lineTo(canvas.width,0)
+            ctx.strokeStyle = 'green'
+            ctx.stroke()
+        }
+        draw()
+
+        addEventListener('resize', () => draw())
+        
+    </script>
+</body>
+</html>
