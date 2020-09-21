@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh
+        }
+
+        h1 {
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 2rem;
+        }
+
+        .container {
+            width: 400px;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .form-input {
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .form-input button {
+            content: "";
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            border: none;
+            background-color: transparent;
+
+        }
+
+        .form-input button:hover {
+            text-decoration: underline;
+            color: #3171E5;
+        }
+
+        input {
+            border: 1px solid #ccc;
+            height: 36px;
+            line-height: 36px;
+            padding-left: 10px;
+            width: 100%;
+        }
+
+        #btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #3171E5;
+            color: #fff;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .error {
+            display: inline-block;
+            color: orangered;
+        }
+
+        .success {
+            border: 1px solid green;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Registration Form</h1>
+
+        <form id="registrationForm">
+            <div class="form-input">
+                <input id="username" type="text">
+            </div>
+
+            <div class="form-input">
+                <input id="password" type="password">
+                <button class="button">Hiện</button>
+            </div>
+
+            <div class="form-input">
+                <input id="confirmPassword" type="password">
+                <button class="button">Hiện</button>
+            </div>
+
+            <button type="submit" id="btn" disabled>Register</button>
+        </form>
+    </div>
+    <script>
+        let form = document.getElementById('registrationForm')
+        form.addEventListener('submit', function (event) {
+            event.preventDefault()
+            console.log('run')
+        })
+
+        // Bài 1: Thêm label cho các trường username, password, confirm password
+        const div = document.querySelectorAll('.form-input')
+        const arrayDiv = Array.from(div)
+
+        let arrayLabel = ['User name', 'Password', 'Confirm Password']
+        for (let i = 0; i < arrayDiv.length; i++) {
+            let label = document.createElement('label')
+            label.innerText = arrayLabel[i]
+            let input = arrayDiv[i].querySelector('input')
+            arrayDiv[i].insertBefore(label, input)
+        }
+
+        // bài 2 : Thêm icon để ẩn hiện password + confirm password
+        const button = document.querySelectorAll('button')
+        const arrayButton = Array.from(button)
+        let password = document.getElementById('password')
+        let confirmPassword = document.getElementById('confirmPassword')
+
+        arrayButton[0].onmousedown = function () {
+            password.type = 'text'
+        }
+        arrayButton[0].onmouseup = function () {
+            password.setAttribute('type', 'password')
+        }
+        arrayButton[1].onmousedown = function () {
+            confirmPassword.type = 'text'
+        }
+        arrayButton[1].onmouseup = function () {
+            confirmPassword.type = 'password'
+        }
+
+        // Bài 3: Kiểm tra xem password và confirm pass có trùng nhau hay không
+        arrayButton[2].onclick = function () {
+            if (password.value == '') {
+                alert('Mật khẩu không được để trống')
+            } else {
+                if (password.value !== confirmPassword.value) {
+                    alert('Mật khẩu không trùng nhau')
+                } else {
+                    alert('Đăng ký thành công')
+                }
+            }
+        }
+
+        // Bài 4: Đảm bảo nút ‘Đăng ký’ bị disable cho đến khi người dùng nhập dữ liệu hợp lệ vào tất cả các trường đầu vào. 
+        // Sau khi nhập đầy đủ thì ‘Đăng ký’ được enable.
+        let username = document.getElementById('username')
+        username.onchange = function() {
+            arrayButton[2].disabled = false
+        }
+
+        // Bài 5: Khi user nhập đủ thông tin và bấm vào nút submit thì tạo 1 hộp thoại thông báo đăng ký thành công
+        
+
+    </script>
+</body>
+
+</html>

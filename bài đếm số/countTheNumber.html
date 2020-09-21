@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            color: #6c757d;
+            background-color: #fff;
+        }
+
+        .main-container {
+            width: 400px;
+            overflow: hidden;
+            background-color: #f4f4f4;
+            border-radius: 4px;
+            padding: 30px;
+        }
+
+        svg {
+            width: 50px;
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        .btn-box {
+            text-align: center;
+        }
+
+        .btn {
+            width: 100px;
+            display: inline-block;
+            padding: 15px 20px;
+            border: 2px solid #6c757d;
+            background-color: #6c757d;
+            color: #fff;
+            font-size: 18px;
+            text-transform: uppercase;
+            cursor: pointer;
+            outline: none;
+            transition: all .3s ease-in;
+            border-radius: 4px;
+        }
+
+        .btn:hover {
+            opacity: .7;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 0;
+            text-transform: uppercase;
+        }
+
+        #counter {
+            font-size: 80px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <h1 class="title">Đếm số</h1>
+        <h1 id="counter" style="color: #333333;">0</h1>
+        <div class="btn-container">
+            <button class="btn counterBtn prevBtn">Trừ</button>
+            <button class="btn counterBtn nextBtn">Cộng</button>
+        </div>
+    </div>
+
+    <script>
+        // Bấm vào nút cộng thì số cộng thêm 1
+        const num = document.getElementById('counter')
+        const button = document.querySelectorAll('.btn')
+        const arrayButton = Array.from(button)
+
+        let number = 0
+        arrayButton[1].onclick = function () {
+            number += 1
+            num.innerText = number
+            if (number > 0) {
+                num.style = "color: blue"
+            } else if (number < 0) {
+                num.style = 'color: red'
+            } else {
+                num.style = 'color: #333333'
+            }
+        }
+        // Bấm vào nút trừ thì số giảm đi 1
+        arrayButton[0].onclick = function () {
+            number -= 1
+            num.innerText = number
+            if (number > 0) {
+                num.style = "color: blue"
+            } else if (number < 0) {
+                num.style = 'color: red'
+            } else {
+                num.style = 'color: #333333'
+            }
+        }
+       
+
+
+
+
+
+    </script>
+</body>
+
+</html>
