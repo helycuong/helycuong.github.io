@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            display: block;
+            background-color: #f3f3f3;
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            float: left;
+            margin: 5px;
+        }
+
+        .box:hover {
+            transform: scale(.9);
+            transition-duration: .5s;
+            opacity: .8;
+            cursor: pointer;
+        }
+
+        .box:active {
+            transform: scale(1.5);
+            transition-duration: .5s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <body>
+        <div class="wrap">
+            <h1> JS DOM</h1>
+            <button id="btn">More boxes</button>
+            <h4 id="score"> Total box: <span class="points"></span></h4>
+
+            <div class="boxes">
+            </div>
+        </div>
+    </body>
+
+    <script>
+        let colors = [
+            '#3498db',
+            '#9b59b6',
+            '#e74c3c',
+            '#2c3e50',
+            '#d35400',
+        ]
+        // Render số box = số lượng màu ra ngoài màn hình bằng js (5 box)
+        let parentDiv = document.querySelector('.boxes')
+        for (let i = 0; i < colors.length; i++) {
+            let div = document.createElement('div')
+            parentDiv.append(div)
+            div.classList.add('box')
+            div.style.background = colors[i]
+        }
+        // Cập nhật số lượng total box trong thẻ <span> có class "points"
+        let point = document.querySelector('.points')
+        point.innerText = colors.length
+
+        // Khi bấm vào box bất kỳ thì box đó biến mất, đồng thời số lượng total box giảm đi 1
+        let box = document.querySelectorAll('.box')
+        let arrayBox = Array.from(box)
+        let count = arrayBox.length
+        for (let i = 0; i < arrayBox.length; i++) {
+            arrayBox[i].onclick = function () {
+                count -= 1
+                parentDiv.removeChild(arrayBox[i])
+                point.innerText = count
+            }
+        }
+
+        // Khi click vào nút "more box" thì số lượng box tăng lên 5 (tương ứng với 5 màu trong mảng colors)
+        // Đồng thời số lượng total box cũng tăng lên 5
+        let btn = document.getElementById('btn')
+        let divWrap = document.querySelector('.wrap')
+        btn.onclick = function () {
+            let copyParentDiv = parentDiv.cloneNode(true)
+            divWrap.append(copyParentDiv)
+            count += 5
+            point.innerText = count
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
