@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: orange;
+        }
+        #container {
+            width: 800px;
+            height: 500px;
+            margin: auto;
+            background-color: orange;
+            border: 2px solid white;
+            margin-top: 80px;
+        }
+        .text {
+            margin: 120px 0 50px 0;
+        }
+        p {
+            text-align: center;
+            font-size: 50px;
+            color: white;
+            text-transform: uppercase;
+        }
+        input {
+            display: block;
+            margin: auto;
+            background-color: transparent;
+            color: white;
+            border: none;
+            font-size: 40px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .btn {
+            width: 500px;
+            height: 40px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+        }
+        button {
+            width: 100px;
+            margin: 0 10px 0 10px;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+        }
+        button:hover {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="text">
+            <p>đồng hồ bấm giờ</p>
+            <form>
+                <input type="text" id="input" name="display" value="00:00:00">
+            </form>
+        </div>
+        <div class="btn">
+            <button onclick="start()">Bắt đầu</button>
+            <button onclick="stop()">Dừng</button>
+            <button onclick="reset()">Reset</button>
+        </div>
+    </div>
+
+    <script>
+        let msec = 0
+        let sec = 0
+        let min = 0
+
+        //Nút start
+        function start() {
+            document.forms[0].display.value = `${min}:${sec}:${msec}`
+            go = setTimeout('start()', 1)
+            msec++
+            if (msec == 100) {
+                msec = 0
+                sec++
+            }
+            if (sec == 60) {
+                sec = 0
+                min++
+            }
+        }
+        //Nút stop
+        function stop() {
+            clearTimeout(go)
+        }
+        ////Nút reset
+        function reset() {
+            window.location.reload()
+        }
+
+    </script>
+</body>
+
+</html>
